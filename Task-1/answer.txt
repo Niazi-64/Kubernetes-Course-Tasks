@@ -1,0 +1,4 @@
+the new pod shows status of error and after certain number of failed starts the status changes to CrashLoopBackOff.
+nginx and time-updater do not start in the new pod and the page is still reachabe.
+nginx and time-updater do not start because the init container are required to run successfully before the main containers work (as a precondition)
+the page is still reachable beacause k8s didnt shutdown the old pods or descale the old replicaset, it only does that when the new pod is created and running successfully 
