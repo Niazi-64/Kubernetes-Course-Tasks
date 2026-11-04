@@ -1,5 +1,8 @@
 # Task 1: Kubernetes Multi-Container Pod
 
+> **Resource constraint note:** This task was completed using two Minikube nodes
+> instead of the planned three nodes because of available system resources.
+
 This task deploys a time-changing Nginx page to a three-node Minikube cluster. The
 Deployment runs three replicas, uses an init container, and uses a BusyBox sidecar
 to update the page every five seconds without a shared volume.
