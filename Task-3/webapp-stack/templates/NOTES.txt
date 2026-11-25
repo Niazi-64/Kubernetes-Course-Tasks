@@ -1,0 +1,7 @@
+Release "{{ .Release.Name }}" has been deployed into namespace "{{ .Release.Namespace }}".
+
+Check running pods:
+  kubectl get pods -n {{ .Release.Namespace }}
+
+Check MySQL replication status:
+  kubectl exec -n {{ .Release.Namespace }} deploy/mysql-read -- sh -c 'mysql -uroot -p"$MYSQL_ROOT_PASSWORD" -e "SHOW REPLICA STATUS\G"'
